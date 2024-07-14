@@ -12,12 +12,17 @@ html {
     scroll-behavior: smooth;
 }
 
+.header {
+    background-image: linear-gradient(to right, #5B483A, #262425);
+}
+
 .header__main {
     display: flex;
     align-items: center;
+    width: 1280px;
     padding: 30px 40px 40px 40px;
     justify-content: space-between;
-    background-image: linear-gradient(to right, #5B483A, #262425);
+    margin: 0 auto;
 }
 
 .header__pets_page {
