@@ -374,16 +374,18 @@ h2 {
 
 .help-list_first-block,
 .help-list_second-block {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 120px);
     padding: 60px 87px 0 87px;
-}
-
-.help-list_first-block {
-    justify-content: space-between;
+    align-self: center;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    justify-content: center;
 }
 
 .help-list_second-block {
-    justify-content: space-around;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .main__in-addition {
