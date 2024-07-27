@@ -19,7 +19,7 @@ html {
 .header__main {
     display: flex;
     align-items: center;
-    width: 1280px;
+    max-width: 1280px;
     padding: 30px 40px 40px 40px;
     justify-content: space-between;
     margin: 0 auto;
@@ -153,20 +153,28 @@ ul li a.pets-page:hover {
 .pets_card-block_main {
     display: flex;
     justify-content: space-between;
-    max-width: 1280px;
+    max-width: 1260px;
     margin: 0 auto;
-    align-items: center;
+}
+
+.pets_card-block_main_difference {
+    justify-content: space-around;
 }
 
 .main__not-only {
-    display: flex;
     background-image: linear-gradient(to right, #5B483A, #262425);
     padding: 90px 40px 0 40px;
 }
 
+.not-only__pic {
+    display: flex;
+    max-width: 698px;
+    max-height: 728px;
+}
+
 .first-screen-foto {
-    width: 698px;
-    height: 728px;
+    max-width: 100%;
+    height: auto;
 }
 
 h1 {
@@ -176,7 +184,16 @@ h1 {
     font-size: 44px;
     line-height: 130%;
     color: #FFFFFF;
-    padding-right: 150px;
+    max-width: 310px;
+}
+
+.not-only__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    max-width: 460px;
+    padding: 0 0 40px 0;
 }
 
 .not-only__description p {
@@ -187,6 +204,7 @@ h1 {
     line-height: 160%;
     color: #CDCDCD;
     padding: 42px 0;
+    max-width: 460px;
 }
 
 .btn {
@@ -199,22 +217,18 @@ h1 {
 }
 
 .main__about {
-    display: flex;
-    justify-content: center;
     padding: 80px 40px 100px 40px;
 }
 
 .about-pets-foto {
-    display: flex;
-    align-items: center;
+    /* display: flex; */
+    /* align-items: center; */
     width: 300px;
     height: 408px;
-    padding-left: 175px;
 }
 
 .main__about_description {
-    padding-left: 120px;
-    padding-right: 175px;
+    max-width: 430px;
 }
 
 h2 {
@@ -343,7 +357,7 @@ h2 {
 .help__container {
     display: flex;
     flex-direction: column;
-    width: 1280px;
+    /* max-width: 1280px; */
     margin: 0 auto;
 }
 
@@ -590,3 +604,10 @@ h2 {
     margin: 0 auto;
     padding-bottom: 45px;
 }
+
+
+/* адаптивная верстка */
+
+@media (max-width: 768px) {
+    
+  }
