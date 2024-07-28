@@ -361,7 +361,20 @@ h2 {
     flex-direction: column;
 }
 
+.flex {
+    display: flex;
+    padding: 5px 87px 0 87px;
+    max-width: 1020px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .help-list {
+    padding-top: 55px;
+    padding-right: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
@@ -372,21 +385,10 @@ h2 {
     color: #545454;
 }
 
-.help-list_first-block,
-.help-list_second-block {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(1, 120px);
-    padding: 60px 87px 0 87px;
-    align-self: center;
-    grid-row-gap: 20px;
-    grid-column-gap: 20px;
-    justify-content: center;
+.no-padding {
+    padding-right: 0px;
 }
 
-.help-list_second-block {
-    grid-template-columns: repeat(4, 1fr);
-}
 
 .main__in-addition {
     display: flex;
@@ -612,5 +614,116 @@ h2 {
 /* адаптивная верстка */
 
 @media (max-width: 768px) {
+    .pets_card-block_main {
+        display: flex;
+        flex-direction: column;
+        max-width: 570px;
+        margin: 0 auto;
+    }
+
+    .not-only__pic {
+        display: flex;
+        align-self: flex-end;
+        max-width: 570px;
+        max-height: 590px;
+    }
+
+    .btn {
+        margin: 0 auto;
+    }
+
+    /* About block */
+    .main__about,
+    .pets_card-block_main_difference,
+    .main__about_description {
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    .pets_card-block_main_difference {
+        flex-direction: column-reverse;
+    }
+
+    .about-pets-foto {
+        display: block;
+        margin: 0 auto;
+        padding-top: 80px;
+        width: 300px;
+        height: 408px;
+    }
+
+    /* Our friends section */
+    #pet-card_to-hide {
+        display: none;
+    }
+
+    .pets_card-block_main {
+        max-width: 708px;
+    }
+
+    .main__our-friends {
+        padding: 80px 30px 100px 30px;
+    }
+
+
+    .our-friends_block,
+    .pets_card-block_our-friends {
+        justify-content: space-between;
+    }
+
+    .pets_card-block_our-friends {
+        flex-wrap: nowrap;
+        padding: 60px 0;
+    }
+
+    /* Help section */
+   
+    .main__help {
+        padding: 80px 69px 100px 69px;
+    }
     
-  }
+    .pets_card-block_main-help {
+       max-width: 630px;
+       margin: 0 auto;
+    }
+    
+    .help__container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .flex {
+        max-width: 630px;
+    }
+
+    .help__container {
+        display: flex;
+        flex-direction: column;
+        padding-top: 60px;
+    }
+    
+    .flex {
+        max-width: 630px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 120px);
+        padding: 60px 0px;
+        align-self: center;
+        grid-row-gap: 60px;
+        grid-column-gap: 55px;
+        padding: 0;    
+    }
+    
+    .help-list {
+        padding-top: 0px;
+        padding-right: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .no-padding {
+        padding-right: 0px;
+    }
+
+}
