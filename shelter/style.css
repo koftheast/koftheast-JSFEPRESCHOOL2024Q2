@@ -749,5 +749,8 @@ h2 {
         padding: 80px 94px 76px 94px;
     }
 
+    .pets-card_to-hide {
+        display: none;
+    }
 
 }
