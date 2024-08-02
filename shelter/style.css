@@ -74,16 +74,16 @@ ul li a:hover {
     border-bottom: 3px solid #F1CDB3;
 }
 
-ul li a.pets-page:hover {
-    color: #545454;
-    padding: 1px;
-    border-bottom: 3px solid #F1CDB3;
+ul li a.pets-page:hover,
+.interactive-menu:hover {
+    cursor: pointer;
+    color:  #7c7c7c;
+    border-bottom: none;
 }
 
 .burger {
     display: none;
 }
-
 
 /* our pets page header*/
 
