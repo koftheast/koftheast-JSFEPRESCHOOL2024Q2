@@ -794,6 +794,16 @@ h2 {
     }
 }
 
+@media (max-width: 685px) {
+    .arrow-responsive320 {
+        display: flex;
+        padding-left: 42px;
+        padding-right: 42px;
+        padding-bottom: 42px;
+        justify-content: space-around;
+    }
+}
+
 @media (max-width: 320px) {
 
     .navbar {
