@@ -45,6 +45,16 @@ html {
     padding-top: 10px;
 }
 
+.logo__pets-page {
+    font-family: 'Georgia', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
 .navbar ul {
     display: flex;
 }
@@ -824,6 +834,10 @@ h2 {
         padding: 80px 94px 76px 94px;
     }
 
+    .main__our-friends_pets h2{
+        font-size: 45px;
+    }
+
     .pets-card_to-hide {
         display: none;
     }
@@ -1343,4 +1357,97 @@ h2 {
         max-width: 300px;
         padding: 30px 10px 0 10px;
     }
+}
+
+/* Pets page */
+
+@media (max-width: 320px) {
+
+    .header__pets-page {
+        padding: 30px 20px;
+    }
+
+    .logo__subtitile_pets-page {
+        font-size: 13px;
+        line-height: 32px;
+        padding-left: 4px;
+    }
+
+    .main__our-friends_pets {
+        padding: 42px 10px 10px 10px;
+    }
+
+    .main__our-friends_pets h2 {
+        font-size: 25px;
+        text-align: center;
+        max-width: 300px;
+        margin: 0 auto;
+        line-height: 27px; 
+    }
+
+    .pets_card-block_pets {
+        justify-content: center;
+        max-width: 280px;
+    }
+
+    .pet-card_pets {
+       padding-bottom: 30px;
+    }
+
+    .pet-card_pets_toHide {
+        display: none;
+    }
+
+    .pet-nickname {
+        line-height: 18px;
+        padding-bottom: 32px;
+    }
+
+    .btn-pagination {
+        display: flex;
+        justify-content: space-between;
+        max-width: 300px;
+        padding: 12px 10px 42px 10px;
+    }
+
+    .btn_pagination_left,
+    .btn_pagination_right,
+    .btn_pagination_left2, 
+    .btn_pagination_right2 {
+        width: 46px;
+        height: 46px;
+        border: 2px solid #CDCDCD;
+        margin: 0;
+        
+    }
+
+    .btn_pagination_page {
+        width: 46px;
+        height: 46px;
+        margin-right: 0px;
+    }
+
+    .btn_pagination_page p {
+        top: 10px;
+        left: 18px;
+    }
+
+    .footer__title {
+        padding-top: 0px;
+    }
+
+    .footer__address .footer__title {
+        padding-top: 36px;
+    }
+
+    .address {
+        max-width: 300px;
+    }
+
+    .footer__contacts,
+    .footer__address {
+        max-width: 300px;
+    }
+
+
 }

@@ -35,10 +35,12 @@ function handleResize() {
     if (window.innerWidth > 768) {
         modal.style.display = 'none'; 
         if (burgerToOpen) burgerToOpen.style.display = 'none';
+        if (burgerPetsPage) burgerPetsPage.style.display = 'none'; // Fixed typo here
         if (navbar) navbar.style.display = 'block';
     } else {
         if (navbar) navbar.style.display = 'none';
         if (burgerToOpen) burgerToOpen.style.display = 'block';
+        if (burgerPetsPage) burgerPetsPage.style.display = 'block';
     }
 }
 
