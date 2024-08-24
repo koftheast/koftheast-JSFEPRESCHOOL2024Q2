@@ -1,9 +1,4 @@
-body,
-h1,
-h2,
-p,
-ul,
-li {
+body, h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
 }
@@ -12,11 +7,17 @@ html {
     scroll-behavior: smooth;
 }
 
+.body-wraper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
 .header {
     background-image: linear-gradient(to right, #5B483A, #262425);
 }
 
-.header__main {
+.header__main, .header__pets-page {
     display: flex;
     align-items: center;
     max-width: 1280px;
@@ -25,17 +26,21 @@ html {
     margin: 0 auto;
 }
 
-.logo__title {
+.logo__title, .logo__pets-page {
     font-family: 'Georgia', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
     line-height: 110%;
     letter-spacing: 0.06em;
+    
+}
+
+.logo__title {
     color: #F1CDB3;
 }
 
-.logo__subtitile {
+.logo__subtitile,  .logo__subtitile_pets-page {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -43,6 +48,12 @@ html {
     line-height: 15px;
     color: #FFFFFF;
     padding-top: 10px;
+}
+
+.logo__subtitile_pets-page {
+    font-family: 'Arial', sans-serif;
+    color: #292929;
+    letter-spacing: 0.1em;
 }
 
 .logo__pets-page {
@@ -91,37 +102,35 @@ ul li a.pets-page:hover,
     border-bottom: none;
 }
 
-.burger {
+.burger, .burger__pets-page {
     display: none;
-}
-
-.burger__pets-page {
-    display: none;
+    position: relative;
+    border: none;
+    outline: none;
 }
 
 .burger_open {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
     transform: rotate(90deg);
     position: absolute;
-    right: 18px;
+    right: 34px;
     top: 48px; 
     margin-left: auto;
     margin-right: auto;
-    cursor: pointer;
 }
 
 #myModal {
-    display: none;
-    z-index: 1000;
-    position: fixed;
-    right: 0;
-    left: 0px;
-    bottom: 0px;
-    top:0;
     color: #FAFAFA;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
     padding: 30px 20px 248px 10px;
     background-color: #292929;
+}
+
+.modal {
+    display: none;
 }
 
 .modal-content {
@@ -154,16 +163,6 @@ ul li a.pets-page:hover,
     padding: 30px 40px 40px 40px;
     justify-content: space-between;
     margin: 0 auto;
-}
-
-.logo__subtitile_pets-page {
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 15px;
-    letter-spacing: 0.1em;
-    color: #292929;
 }
 
 .navbar__pets ul{
@@ -851,17 +850,72 @@ h2 {
 
     .burger {
         display: block;
+        width: 40px;
+        height: 40px;
         cursor: pointer;
-        pointer-events: auto;
+    }
+
+    .burger div {
+        display: block;
+        position: absolute;
+        top: 18px;
+        width: 30px;
+        height: 3px;
+        left: 5px;
+        background-color: #F1CDB3;
+        transition: ba;
+    }
+
+    .burger div:nth-child(1) {
+        transform: translateY(-10px);
+    }
+
+    .burger div:nth-child(2) {}
+
+    .burger div:nth-child(3) {
+        transform: translateY(10px);
+    }
+
+    /* Vertical position */
+
+    header.open .burger div:nth-child(1) {
+        transform: translateX(-10px) rotate(90deg);
+    }
+
+    header.open .burger div:nth-child(2) {
+        transform: translateX(0px) rotate(90deg);
+    }
+
+    header.open .burger div:nth-child(3) {
+        transform: translateX(10px) rotate(90deg);
     }
 
     .burger__pets-page {
         display: block;
+        width: 30px;
+        height: 20px;
         cursor: pointer;
     }
 
+    .burger__pets-page .burger-bar {
+        background-color: #000000;
+    }
+
+
     .navbar__pets ul{
         display: none;
+    }
+
+    .modal {
+        position: absolute;
+        right: -320px;
+        top: 0;
+        width: 320px;
+        height: 100%;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        visibility: hidden;
     }
 }
 
@@ -1448,6 +1502,4 @@ h2 {
     .footer__address {
         max-width: 300px;
     }
-
-
 }

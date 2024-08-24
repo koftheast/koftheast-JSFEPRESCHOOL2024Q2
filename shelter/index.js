@@ -4,6 +4,12 @@ const burgerPetsPage = document.querySelector('.burger__pets-page');
 const burgerToClose = document.querySelector('.burger_open');
 const navbar = document.querySelector('.navbar');
 
+function toggleMenu() {
+    const isOpen = modal.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+}
+
+
 if (burgerToOpen) {
     burgerToOpen.addEventListener('click', handleClick);
 }
@@ -19,9 +25,11 @@ if (burgerPetsPage) {
 window.addEventListener('resize', handleResize);
 
 function handleClick() {
-    modal.style.display = "block";
-    if (burgerToOpen) burgerToOpen.style.display = 'none';
-    if (burgerPetsPage) burgerPetsPage.style.display = 'none';
+    if (window.innerWidth <= 768) {
+        modal.style.display = "block";
+        if (burgerToOpen) burgerToOpen.style.display = 'none';
+        if (burgerPetsPage) burgerPetsPage.style.display = 'none';
+    }
 }
 
 
@@ -35,7 +43,7 @@ function handleResize() {
     if (window.innerWidth > 768) {
         modal.style.display = 'none'; 
         if (burgerToOpen) burgerToOpen.style.display = 'none';
-        if (burgerPetsPage) burgerPetsPage.style.display = 'none'; // Fixed typo here
+        if (burgerPetsPage) burgerPetsPage.style.display = 'none';
         if (navbar) navbar.style.display = 'block';
     } else {
         if (navbar) navbar.style.display = 'none';
@@ -43,4 +51,5 @@ function handleResize() {
         if (burgerPetsPage) burgerPetsPage.style.display = 'block';
     }
 }
+
 
