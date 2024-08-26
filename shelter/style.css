@@ -33,7 +33,6 @@ html {
     font-size: 32px;
     line-height: 110%;
     letter-spacing: 0.06em;
-    
 }
 
 .logo__title {
@@ -102,52 +101,54 @@ ul li a.pets-page:hover,
     border-bottom: none;
 }
 
-.burger, .burger__pets-page {
+.header__burger-btn {
     display: none;
     position: relative;
+    width: 40px;
+    height: 40px;
     border: none;
     outline: none;
-}
-
-.burger_open {
-    width: 30px;
-    height: 20px;
+    z-index: 2;
+    background-color: transparent;
     cursor: pointer;
-    transform: rotate(90deg);
+}
+
+.header__burger-btn:hover span {
+    background-color: #edb48b;
+}
+
+.header__burger-btn span {
+    display: block;
     position: absolute;
-    right: 34px;
-    top: 48px; 
-    margin-left: auto;
-    margin-right: auto;
+    width: 30px;
+    height: 3px;
+    left: 5px;
+    background-color: #F1CDB3;
+    transition: background-color .5s, opacity .2s, transform .5s;
+    will-change: transform;
 }
 
-#myModal {
-    color: #FAFAFA;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    padding: 30px 20px 248px 10px;
-    background-color: #292929;
+.header__burger-btn span:nth-child(1) {
+    transform: translateY(-10px);
 }
 
-.modal {
-    display: none;
+.header__burger-btn span:nth-child(2) {}
+
+.header__burger-btn span:nth-child(3) {
+    transform: translateY(10px);
 }
 
-.modal-content {
-    padding: 158px 18px 0 29px;
+/* Vertical */
+header.open .header__burger-btn span:nth-child(1) {
+    transform: translateX(-10px) rotate(90deg);
 }
 
-.modal ul li {
-    text-align: center;
-    padding-top: 40px;
-    padding-left: 0;
-    color: #CDCDCD;
+header.open .header__burger-btn span:nth-child(2) {
+    transform: rotate(90deg)
 }
 
-.modal ul li.active span {
-    color: #FAFAFA;
-    padding: 1px;
-    border-bottom: 3px solid #F1CDB3;
+header.open .header__burger-btn span:nth-child(3) {
+    transform: translateX(10px) rotate(90deg);
 }
 
 /* our pets page header*/
@@ -665,9 +666,80 @@ h2 {
 }
 
 
+
+
+
+
+
+
 /* адаптивная верстка */
+@media (max-width: 943px) {
+    .pets_card-block_our-friends {
+        padding-bottom: 20px;
+    }
+
+    .pets-card_to-hide {
+        display: none;
+    }
+
+    .pets_card-block_our-friends {
+        justify-content: space-around;
+    }
+}
 
 @media (max-width: 768px) {
+    .navbar {
+        position: absolute;
+        right: -320px;
+        top: 0;
+        width: 320px;
+        height: 100%;
+        background-color: #333;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        color: #fff;
+        padding: 20px;
+        visibility: hidden;
+        transition: transform .5s, visibility .5s;
+        will-change: transform;
+    }
+
+    header.open .navbar {
+        transform: translateX(-88%);
+        visibility: visible;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 248px 38px;
+        max-width: 243px;
+    }
+
+    .navbar ul li {
+        padding-bottom: 40px;
+        padding-left: 0;
+    }
+
+    .header__burger-btn {
+        display: block;
+    }
+
+    .burger__pets-page {
+        display: block;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .burger__pets-page .burger-bar {
+        background-color: #000000;
+    }
+
+    .navbar__pets ul{
+        display: none;
+    }
 
     .main__not-only .pets_card-block_main {
         display: flex;
@@ -841,96 +913,6 @@ h2 {
         display: none;
     }
 
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
-
-    .burger {
-        display: block;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-
-    .burger div {
-        display: block;
-        position: absolute;
-        top: 18px;
-        width: 30px;
-        height: 3px;
-        left: 5px;
-        background-color: #F1CDB3;
-        transition: ba;
-    }
-
-    .burger div:nth-child(1) {
-        transform: translateY(-10px);
-    }
-
-    .burger div:nth-child(2) {}
-
-    .burger div:nth-child(3) {
-        transform: translateY(10px);
-    }
-
-    /* Vertical position */
-
-    header.open .burger div:nth-child(1) {
-        transform: translateX(-10px) rotate(90deg);
-    }
-
-    header.open .burger div:nth-child(2) {
-        transform: translateX(0px) rotate(90deg);
-    }
-
-    header.open .burger div:nth-child(3) {
-        transform: translateX(10px) rotate(90deg);
-    }
-
-    .burger__pets-page {
-        display: block;
-        width: 30px;
-        height: 20px;
-        cursor: pointer;
-    }
-
-    .burger__pets-page .burger-bar {
-        background-color: #000000;
-    }
-
-
-    .navbar__pets ul{
-        display: none;
-    }
-
-    .modal {
-        position: absolute;
-        right: -320px;
-        top: 0;
-        width: 320px;
-        height: 100%;
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        visibility: hidden;
-    }
-}
-
-@media (max-width: 943px) {
-    .pets_card-block_our-friends {
-        padding-bottom: 20px;
-    }
-
-    .pets-card_to-hide {
-        display: none;
-    }
-
-    .pets_card-block_our-friends {
-        justify-content: space-around;
-    }
 }
 
 @media (max-width: 707px) {
@@ -1115,10 +1097,6 @@ h2 {
 }
 
 @media (max-width: 320px) {
-
-    .navbar {
-        display: none;
-    }
 
     .burger {
         display: block;

@@ -12,14 +12,14 @@
 </head>
 <body>
     <div class="body-wraper">
-        <header class="open">
+        <header>
             <div class="header">
                 <div class="header__main">
                     <div class="logo">
                         <a href="#logo" class="logo__title">Cozy House</a>
                         <p class="logo__subtitile">Shelter for pets in Boston</p>
                     </div>
-                    <nav class="navbar">
+                    <nav class="navbar" id="menu">
                         <ul>
                             <li><span class="underline"><a href="">About the shelter</a></span></li>
                             <li><span><a href="pets.html" target="_self" class="interactive-menu">Our pets</a></span></li>
@@ -27,26 +27,11 @@
                             <li><span><a href="#footer" class="interactive-menu">Contacts</a></span></li>
                         </ul>
                     </nav>
-                    <div class="burger">
-                        <div class="burger-bar"></div>
-                        <div class="burger-bar"></div>
-                        <div class="burger-bar"></div>
-                    </div>
-                    <div id="myModal" class="modal">
-                        <div class="burger_open">
-                            <div class="burger-bar"></div>
-                            <div class="burger-bar"></div>
-                            <div class="burger-bar"></div>
-                        </div>
-                        <div class="modal-content">
-                            <ul>
-                                <li class="active"><span>About the shelter</span></li>
-                                <li>Our pets</li>
-                                <li>Help the shelter</li>
-                                <li>Contacts</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <button class="header__burger-btn" id="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </header>
